@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>MOVIES RECOMMENDATION ALGORITHM</title>
+  <meta name="Description" content="Movie Recomender system">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='movie_recommend.css') }}">
+
+</head>
+
+<body><div id="topArea"> <a href="#top"><img src="{{ url_for('static', filename='logo2.PNG') }}" class="positionMe" width="300"></a></div>
+ <div class="login">
+
+  <p class="sampleText">MOVIE RECOMMENDER</p>
+  <p> This page runs a <em>recommendation algorithm</em> that enables you to chek out similar movies to the ones you like so as to keep you watching what actually interests you.</p>
+  <p><img src="{{ url_for('static', filename='background.PNG') }}" alt="clustered movies">
+    <p>Keep yourself updated, don't miss out on new the 2020 release.<a href="https://www.imdb.com/list/ls020810230/" target = "_blank"> Click Here to check IMDB. </a></p>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('check_status')}}"method="post">
+      <h4>Use this recommendation Algorithm to check for similar movies you might love to watch. Simply input the name of a movie you like.</h4>
+    	<input type="text" name="YOUR MOVIE NAME" placeholder="YOUR MOVIE NAME " required="required" size="50" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">check_status</button>
+    </form>
+
+   <br>
+   <br><div id="midArea">
+   {% for table in tables %}
+            {{titles[loop.index]}}
+            {{ table|safe }}
+{% endfor %}</div>
+
+   <!-- EMBEDDING THE MOVIE COMPANIES CHECK OUT-->
+
+   <p><a href="https://www.netflix.com/"><img src= "{{ url_for('static', filename='netflix.jpg') }}"width="150" height="50"></a>
+
+<!-- EMBEDDING THE HBO LOGO-->
+<a href="https://www.hbo.com/"><img src="{{ url_for('static', filename='hbo.jpg') }}" width="150" height="50"></a>
+
+<!-- EMBEDDING THE CW LOGO-->
+<a href="https://www.cwtv.com/"><img src="{{ url_for('static', filename='cw.png') }}" width="150" height="50"></a>
+
+<!-- EMBEDDING THE Marvel LOGO-->
+<a href="https://www.marvel.com/movies"><img src= "{{ url_for('static', filename='marvel.jpg') }}"width="150" height="50"></a>
+
+<!-- EMBEDDING THE DC LOGO-->
+<a href="https://www.dccomics.com/movies"><img src= "{{ url_for('static', filename='dc.jpg') }}" width="150" height="50"></a>
+
+<!-- EMBEDDING THE IMDB LOGO-->
+<a href="https://www.imdb.com/"><img src= "{{ url_for('static', filename='imdb.jpg') }}"width="150" height="50"></a>
+
+
+<!-- EMBEDDING THE APPLE_TV LOGO-->
+<a href="https://www.apple.com/tv/"><img src="{{ url_for('static', filename='apple_tv.jpg') }}" width="130" height="50"></a>
+<!-- EMBEDDING APPLE+ TV-->
+<a href="https://www.disneyplus.com/"><img src= "{{ url_for('static', filename='disney-plus.jpg') }}"width="120" height="50"></a>
+<!--EMBEDDING THE FOX TV-->
+<a href="https://www.fox.com/live/"><img src="{{ url_for('static', filename='FOX.png') }}" width="150" height="50"></a>
+   </p>
+
+
+
+   <!--Movie of the week-->
+  <div class="weekly_movies"><h4>The Most Correlated Movie Series Of The Week: </h4>
+   <img src="{{ url_for('static', filename='GOT.jpg') }}">    <img src="{{ url_for('static', filename='the_witcher.jpg') }}" width="300" height="168">    <img src="{{ url_for('static', filename='vickings.jpg') }}" width="300" height="168">
+
+ 
+ <!-- G.O.T sound track-->
+<p><audio controls=""><source src="{{ url_for('static', filename='gameofthronestrack.mp3')}}"type=""></audio>    <audio controls=""><source src="{{ url_for('static', filename='thewitchersoundtrack.mp3')}}"type=""></audio>    <audio controls=""><source src="{{ url_for('static', filename='vickingsthemesong.mp3')}}"type=""></audio></p>
+<p> Chill out with the G.O.T theme song, Toss a coin to your witcher from THE WITCHER or if i had a heart VIKINGS.</p></div>
+<!-- add your video>
+
+
+<!-- check out my mail-->
+<!--bottom area-->
+<div id="bottomArea">
+<p> ...send me a mail..<a href="mailto: femiosinkolu@gmail.com" target= _blank><img src="{{ url_for('static', filename='gmail.jpg')}}" width=20 height=20>
+
+<!--follow me on twitter-->
+<a href="<a href="https://twitter.com/profvictor001?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"> Follow me on twitter .</a><script async src="https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fpublish.twitter.com%2F%3FbuttonType%3DFollowButton%26query%3Dhttps%253A%252F%252Ftwitter.com%252Fprofvictor001%26widget%3DButton&ref_src=twsrc%5Etfw&screen_name=profvictor001&tw_p=followbutton" charset="utf-8"></script> <img src="{{ url_for('static', filename='twitter.jpg') }}" width=20 height=20></a></p></div>
+
+</div></body>
+</html>

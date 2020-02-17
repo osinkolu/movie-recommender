@@ -1,0 +1,50 @@
+/*this is the css script*/
+@charset "UTF-8";
+/*the box of the header*/
+ .sampleText{
+    font-family:Impact, Hacttenschweiler, "Franklin Gothic Bold", "Ariel Black", "sans-serif";
+    font-size: 18pt;
+    color: cadetblue;
+    width:1350px;
+    border: solid 2px black;
+    padding:10px;
+    margin:2px;
+    text-align: center;
+    background-color: ;
+  } 
+body{
+    background-color: silver;
+    text-align: center;
+}
+a:hover{
+    color: green;
+}
+#bottomArea{
+   background-color: white;
+   height:20px;
+   color:black;
+   text-align: center;
+   width:;
+}
+#topArea{
+    background-color: white;
+    height:150px;
+    width: 1350px;
+}
+.positionMe{
+    position:relative;
+    top:5px;
+    left:20%;
+}
+h4{
+    color: black;
+}
+.weekly_movies{
+  display: block;
+  position:relative;
+    left:20%;
+}
+#midArea{
+  position: relative;
+  left: 20%;
+}
